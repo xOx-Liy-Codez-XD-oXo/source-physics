@@ -18,6 +18,13 @@
 
 #include <stdio.h>
 
+#ifdef OSX
+#include <alloca.h>
+#ifndef alloca
+#define alloca(x)  __builtin_alloca(x)
+#endif
+#endif
+
 #include <math.h>
 #if defined(LINUX)
 #	include <string.h>
